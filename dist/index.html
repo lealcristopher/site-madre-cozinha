@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madre Cozinha Criativa | Experiência Gastronômica</title>
+    <title>Madre Cozinha Criativa</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" 
-          rel="stylesheet" 
-          media="print" 
-          onload="this.media='all'">
-    
     <link rel="preload" as="image" href="img/ceviche.jpg">
-
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    </noscript>
 
     <style>
         :root {
@@ -201,7 +192,9 @@
     </style>
 
     
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" 
+          rel="stylesheet" media="print" onload="this.media='all'">
+          
     <!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C076R9R8D2"></script>
 	<script>
@@ -287,6 +280,24 @@
         <p>&copy; 2023 Madre Cozinha Criativa. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Rolagem suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Otimização de cliques para Analytics (opcional)
+        function trackWhatsapp(servico) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_whatsapp', { 'servico': servico });
+            }
+        }
+    </script>
 </body>
 </html>
