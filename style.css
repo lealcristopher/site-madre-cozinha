@@ -1,0 +1,178 @@
+:root {
+    --primary-orange: #C55D2D;
+    --primary-green: #1E2B0D;
+    --accent-gold: #F39B00;
+    --deep-red: #822020;
+    --dark-bg: #2B0B0F;
+    --light-cream: #FFF6E6;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-cream);
+    color: var(--primary-green);
+    line-height: 1.6;
+}
+
+h1, h2, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* Estilo para a Logo no Menu */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 100px; /* Altura ideal para a barra fixa */
+    width: auto;  /* Mantém a proporção da logo */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse na logo */
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .logo img {
+        height: 50px; /* Logo um pouco menor no celular */
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    /* Filtro levemente quente: 
+       Ambar suave (#C55D2D com 35%) para Marrom Profundo (#2B0B0F com 50%) */
+    background: url('img/ceviche.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-cream);
+    text-align: center;
+    padding: 0 20px;
+    /* Adiciona uma leve sombra no texto para garantir leitura sem escurecer muito a foto */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: white; text-decoration: none; font-weight: 600; }
+
+.cta-button {
+    background-color: var(--primary-orange);
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.cta-button:hover { background-color: var(--accent-gold); }
+
+/* Grid de Serviços */
+.container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: var(--deep-red); }
+
+.grid-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* Removemos o fundo cinza e o flex do placeholder antigo */
+.gallery-placeholder {
+    width: 100%;
+    height: 250px; /* Altura fixa para manter a simetria dos cards */
+    overflow: hidden; /* Garante que a imagem não saia da borda arredondada */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a foto sem esticar */
+    transition: transform 0.5s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito de zoom elegante ao passar o mouse no card */
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.btn-link {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+/* Sobre */
+.about-section {
+    background-color: var(--primary-green);
+    color: var(--light-cream);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-content { max-width: 800px; margin: 0 auto; }
+
+footer { text-align: center; padding: 40px; font-size: 0.9rem; }
+
+/* Estilo para a logo dentro da seção Sobre */
+.about-logo {
+    margin-top: 40px; /* Espaço entre o texto e a logo */
+    max-width: 180px; /* Tamanho controlado para não dominar a seção */
+    height: auto;
+    opacity: 0.85;    /* Uma leve transparência para um visual mais sofisticado */
+    transition: opacity 0.3s ease;
+}
+
+.about-logo:hover {
+    opacity: 1;       /* Ganha destaque total ao passar o mouse */
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .about-logo {
+        max-width: 140px;
+        margin-top: 30px;
+    }
+}
